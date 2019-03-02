@@ -1,4 +1,4 @@
-import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory } from '../lib/controller/path.js'
+import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory, pathIsFile, readDirectory } from '../lib/controller/path.js'
 
 describe('convertRelativeToAbsolute', () => {
     it ('Deberia ser una función', () => {
@@ -16,7 +16,13 @@ describe('convertRelativeToAbsolute', () => {
     it ('Deberia retornar true ya que la ruta es directorio', () => {
         expect(pathIsDirectory('.\\test')).toBe(true)
     })
-    it ('Deberia retornar true ya que la ruta es directorio', () => {
+    it ('Deberia retornar false ya que la ruta es directorio', () => {
         expect(pathIsDirectory('.\\test\\testPrueba\\file.js')).toBe(false)
+    })
+    it ('Deberia retornar true ya que la ruta es archivo', () => {
+        expect(pathIsFile('.\\test\\testPrueba\\file.js')).toBe(true)
+    })
+    it ('Deberia retornar un array con los archivos y carpetas de la ruta', () => {
+        expect(readDirectory('.\\test\\testPrueba')).toEqual(['file.js','file6.md','prueba1','prueba2'])
     })
 })
