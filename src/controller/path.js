@@ -60,7 +60,7 @@ export const getMDLinks = (routerMD) => {
     return arrayLinks;
 };
 
-console.log(getMDLinks('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md')); 
+// console.log(getMDLinks('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md')); 
 // const inputTerminal = process.argv[2];
 // console.log(inputTerminal);
 // console.log(getMDFiles(process.argv[2])); 
