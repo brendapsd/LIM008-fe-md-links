@@ -2,51 +2,29 @@ import { getMDLinks, getMDFiles } from './path.js';
 
 const fetch = require('node-fetch');
 
-const linksValidate = (arrObjLinks) => { 
-  const travelArrObjLinks = arrObjLinks.forEach((linksOfArray) => {
+export const linksValidate = (arrObjLinks) => {  
+  const travelArrObjLinks = arrObjLinks.map((linkObj) => {
     return new Promise((resolve, reject) => {
-      fetch(linksOfArray.href)
-        .then(result => {
-          if (result.status >= 200 && result.status < 400) {
-            linksOfArray.status = result.status;
-            linksOfArray.message = result.status; 
-            resolve(linksOfArray);
+      fetch(linkObj.href)
+        .then(response => {
+          if (response.status >= 200 && response.status < 400) {
+            linkObj.status = response.status;
+            linkObj.message = response.statusText; 
+            resolve(linkObj);            
           } else {
-            linksOfArray.status = result.status;
-            linksOfArray.message = 'Fail'; 
-            resolve(linksOfArray);
+            linkObj.status = response.status;
+            linkObj.message = 'Fail'; 
+            resolve(linkObj); 
           }
         }).catch(error => {
           return reject(error);
         });
     });
   });
-  return Promise.all(travelArrObjLinks); 
+  
+  return Promise.all(travelArrObjLinks);
 };
 
-// linksValidate(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md'))); 
+linksValidate(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md')))
+  .then(res => console.log(res)); 
 
-console.log(linksValidate(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba'))));
-
-// fetch('https://api.github.com/users/github')
-//   .then(res => res.json())
-//   .then(json => console.log(json));
-
-// fetch('https://github.com/')
-//   .then(res => res.text())
-//   .then(body => console.log(body));
-
-// fetch('https://api.github.com/users/brendapsd').then((res) => {
-//   return res.json(); 
-// }).then((json) => {
-//   console.log(json); 
-// }); 
-
-// fetch('https://github.com/')
-//   .then(res => {
-//     console.log(res.ok);
-//     console.log(res.status);
-//     // console.log(res.statusText);
-//     // console.log(res.headers.raw());
-//     // console.log(res.headers.get('content-type'));
-//   });

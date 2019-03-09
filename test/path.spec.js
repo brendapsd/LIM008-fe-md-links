@@ -21,7 +21,7 @@ const arrObjLinks = [
     text: 'File System',
     file:
  'C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md' },
-  { href: 'https://daringfireball.net/projects/markdown/syntax',
+  { href: 'https://daringfireball.net/projects/markdown/synx',
     text: 'Markdown',
     file:
  'C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md' },
@@ -79,7 +79,7 @@ describe('readDirectory, getMDFiles, getMDLinks', () => {
       'C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\prueba2\\file4.md'
     ]);
   });
-  it('Deberia retornar el array de objetos con el href, text, file de los archivos MD', () => {
+  it('Deberia retornar el array de objetos con las propiedades href, text, file de los archivos MD', () => {
     expect(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba'))).toEqual(arrObjLinks);
   });
 });

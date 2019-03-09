@@ -8,5 +8,5 @@ herramienta usando [Node.js](https://nodejs.org/) para leer y analizar archivos.
 ![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
 Tópicos: [Semver](https://semver.org/), [Node.js](https://nodejs.org/en/),
 [File System](https://nodejs.org/api/fs.html), Parsing,
-[Markdown](https://daringfireball.net/projects/markdown/syntax)
+[Markdown](https://daringfireball.net/projects/markdown/synx)
 Contraer
