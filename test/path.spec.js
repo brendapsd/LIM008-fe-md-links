@@ -1,4 +1,4 @@
-import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory, pathIsFile, readDirectory, getMDFiles, readFiles, getMDLinks } from '../src/controller/path.js';
+import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory, pathIsFile, readDirectory, getMDFiles, getMDLinks } from '../src/controller/path.js';
 
 const arrObjLinks = [ 
   { href: 'https://es.wikipedia.org/wiki/Markdown',
@@ -48,7 +48,7 @@ describe('convertRelativeToAbsolute', () => {
     expect(typeof convertRelativeToAbsolute).toBe('function');
   });
   it('Deberia convertir una ruta relativa a absoluta', () => {
-    expect(convertRelativeToAbsolute('.\\test')).toBe('C:\\Users\\Brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test');
+    expect(convertRelativeToAbsolute('.\\test')).toBe('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test');
   });
 });
 describe('pathIsAbsolute, pathIsDirectory, pathIsFile', () => {
