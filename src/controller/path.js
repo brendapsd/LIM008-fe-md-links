@@ -52,7 +52,7 @@ export const getMDLinks = (arrayMDFiles) => {
   arrayMDFiles.forEach((routerMD) => {
     const readFilesMD = readFiles(routerMD); 
     const renderer = new marked.Renderer(); 
-    renderer.link = (href, title, text) => {
+    renderer.link = (href, ___, text) => {
       arrayLinks.push({ href, text, file: routerMD }); 
     };
     marked(readFilesMD, {renderer});
