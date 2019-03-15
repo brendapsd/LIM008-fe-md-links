@@ -17,7 +17,9 @@ export const linksValidate = (arrObjLinks) => {
             resolve(linkObj); 
           }
         }).catch(error => {
-          return console.log('Hubo un error ' + error.message);
+          linkObj.status = '';
+          linkObj.message = 'Not Found';
+          resolve(linkObj);
         });
     });
   });
