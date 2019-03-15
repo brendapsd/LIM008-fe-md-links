@@ -13,7 +13,7 @@ export const mdLinks = (path, options) => {
     pathAbs = path; 
   };
   return new Promise((resolve) => {
-    if (options === undefined) {
+    if (!options.validate) {
       resolve(getMDLinks(getMDFiles(pathAbs)));
     } if (options.validate) {
       resolve(linksValidate(getMDLinks(getMDFiles(pathAbs))));
@@ -21,8 +21,8 @@ export const mdLinks = (path, options) => {
   });
 };
 
-mdLinks('.\\test\\testPrueba\\file6.md')
-  .then(res => console.log(res)); 
+// mdLinks('.\\test\\testPrueba\\file6.md')
+//   .then(res => console.log(res)); 
 
 // const options = {
 //   validate : true 

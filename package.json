@@ -1,14 +1,21 @@
 {
-  "name": "social-network",
+  "name": "md-links",
   "version": "1.0.0",
-  "description": "Social Network @ Laboratoria",
-  "main": "src/index.html",
+  "description": "md-links",
+  "main": "lib/index.js",
   "keywords": [
     "javascript",
     "npm",
     "jest"
   ],
   "license": "MIT",
+  "bin": {
+    "md-links": "lib/cli.js"
+  },
+  "repositary": {
+    "type": "git",
+    "url": "git+https://github.com/brendapsd/md-links.git"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "eslint": "eslint --ext .js src/ test/",
