@@ -1,7 +1,7 @@
 import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory, pathIsFile, readDirectory, getMDFiles, getMDLinks } from '../src/controller/path.js';
 
 const arrObjLinks = [ 
-  { href: 'https://es.wikipedia.org/wiki/Markdown',
+  { href: 'https://es.wikipediaXX.org/wiki/Markdown',
     text: 'Markdown',
     file:
  `${process.cwd()}\\test\\testPrueba\\file6.md` },

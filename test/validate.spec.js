@@ -1,7 +1,7 @@
 import { linksValidate } from '../src/controller/validate.js';
 
 const arrObjLinks = [ 
-  { href: 'https://es.wikipedia.org/wiki/Markdown',
+  { href: 'https://es.wikipediaXX.org/wiki/Markdown',
     text: 'Markdown',
     file:
  `${process.cwd()}\\test\\testPrueba\\file6.md` },
@@ -15,12 +15,12 @@ const arrObjLinks = [
  `${process.cwd()}\\test\\testPrueba\\file6.md` }
 ]; 
 const arrObjLinksOK = [
-  { href: 'https://es.wikipedia.org/wiki/Markdown',
+  { href: 'https://es.wikipediaXX.org/wiki/Markdown',
     text: 'Markdown',
     file:
-     `${process.cwd()}\\test\\testPrueba\\file6.md`,
-    status: 200,
-    message: 'OK' },
+    `${process.cwd()}\\test\\testPrueba\\file6.md`,
+    status: '',
+    message: 'Not Found' },
   { href: 'https://nodejs.org/',
     text: 'Node.js',
     file:
