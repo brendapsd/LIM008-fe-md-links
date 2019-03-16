@@ -1,7 +1,7 @@
 {
   "name": "md-links",
   "version": "1.0.0",
-  "description": "md-links",
+  "description": "md-links extrae los links de los archivos Markdown y valida cuales son rotos o no",
   "main": "lib/index.js",
   "keywords": [
     "javascript",

@@ -27,6 +27,6 @@ export const linksValidate = (arrObjLinks) => {
   return Promise.all(travelArrObjLinks);
 };
 
-linksValidate(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md')))
-  .then(res => console.log(res)); 
+// linksValidate(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba\\file6.md')))
+//   .then(res => console.log(res)); 
 

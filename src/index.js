@@ -17,5 +17,5 @@ export const mdLinks = (path, options) => {
   });
 };
 
-mdLinks('.\\test\\testPrueba\\file6.md', { validate: false })
-  .then(res => console.log(res)); 
+// mdLinks('.\\test\\testPrueba\\file6.md', { validate: false })
+//   .then(res => console.log(res)); 
