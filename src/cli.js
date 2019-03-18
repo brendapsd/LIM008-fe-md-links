@@ -20,7 +20,7 @@ if (firstOption === '--validate' && secondOption === '--stats' || firstOption ==
   mdLinks(path, validateOption)
     .then(res => {
       res.forEach((objLinks) => {
-        console.log(`${path} ${objLinks.href} ${objLinks.message} ${objLinks.status} ${objLinks.text}`);
+        console.log(`File: ${path}\nhref: ${objLinks.href}\nmessage: ${objLinks.message}\nstatus: ${objLinks.status}\ntext: ${objLinks.text}\n`);
       });  
     }); 
 } else if (firstOption === '--stats') {
@@ -29,7 +29,7 @@ if (firstOption === '--validate' && secondOption === '--stats' || firstOption ==
 } else {
   mdLinks(path, validateOption)
     .then(res => res.forEach((objLinks) => { 
-      console.log(`${objLinks.file}\n${objLinks.href}\n${objLinks.text}`);
+      console.log(`File: ${path}\nhref: ${objLinks.href}\nText: ${objLinks.text}\n`);
     })); 
 }
 
