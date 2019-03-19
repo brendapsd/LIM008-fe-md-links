@@ -1,4 +1,5 @@
 import { mdLinks } from '../src/index.js';
+const path = require('path');
 
 const output = [
   { href: 'https://es.wikipediaXX.org/wiki/Markdown',
@@ -68,19 +69,19 @@ const output1 = [
 
 describe('Funcion mdLinks', () => {
   it('Deberia retornar el array de objetos con las propiedades href, text, file', (done) => {
-    mdLinks('.\\test\\testPrueba\\file6.md', { validate: false }).then((resolve) => {
+    mdLinks(path.resolve('.\\test\\testPrueba\\file6.md'), { validate: false }).then((resolve) => {
       expect(resolve).toEqual(output); 
       done(); 
     });
   });
   it('Deberia retornar el array de objetos con las propiedades href, text, file, status, message', (done) => {
-    mdLinks('.\\test\\testPrueba\\file6.md', { validate: true }).then((resolve) => {
+    mdLinks(path.resolve('.\\test\\testPrueba\\file6.md'), { validate: true }).then((resolve) => {
       expect(resolve).toEqual(output1); 
       done(); 
     });
   });
   it('Deberia retornar el array de objetos con las propiedades href, text, file, status, message', (done) => {
-    mdLinks(`${process.cwd()}\\test\\testPrueba\\file6.md`, { validate: true }).then((resolve) => {
+    mdLinks(path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`), { validate: true }).then((resolve) => {
       expect(resolve).toEqual(output1); 
       done(); 
     });

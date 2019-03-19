@@ -1,4 +1,5 @@
 import { linksValidate } from '../src/controller/validate.js';
+const path = require('path');
 
 const arrObjLinks = [ 
   { href: 'https://es.wikipediaXX.org/wiki/Markdown',

@@ -1,4 +1,5 @@
 import { convertRelativeToAbsolute, pathIsAbsolute, pathIsDirectory, pathIsFile, readDirectory, getMDFiles, getMDLinks } from '../src/controller/path.js';
+const path = require('path');
 
 const arrObjLinks = [ 
   { href: 'https://es.wikipediaXX.org/wiki/Markdown',
@@ -48,31 +49,31 @@ describe('convertRelativeToAbsolute', () => {
     expect(typeof convertRelativeToAbsolute).toBe('function');
   });
   it('Deberia convertir una ruta relativa a absoluta', () => {
-    expect(convertRelativeToAbsolute('test\\testPrueba\\file6.md')).toBe(`${process.cwd()}\\test\\testPrueba\\file6.md`);
+    expect(convertRelativeToAbsolute(path.resolve('test\\testPrueba\\file6.md'))).toBe(`${process.cwd()}\\test\\testPrueba\\file6.md`);
   });
 });
 describe('pathIsAbsolute, pathIsDirectory, pathIsFile', () => {
   it('Deberia retornar true ya que la ruta es absoluta', () => {
-    expect(pathIsAbsolute(`${process.cwd()}\\test`)).toBe(true);
+    expect(pathIsAbsolute(path.resolve(`${process.cwd()}\\test`))).toBe(true);
   });
   it('Deberia retornar true ya que la ruta es directorio', () => {
-    expect(pathIsDirectory('.\\test')).toBe(true);
+    expect(pathIsDirectory(path.resolve('.\\test'))).toBe(true);
   });
   it('Deberia retornar true ya que la ruta es archivo', () => {
-    expect(pathIsFile('.\\test\\testPrueba\\file.js')).toBe(true);
+    expect(pathIsFile(path.resolve('.\\test\\testPrueba\\file.js'))).toBe(true);
   });
 }); 
 describe('readDirectory, getMDFiles, getMDLinks', () => {
   it('Deberia retornar un array con los archivos y carpetas de la ruta', () => {
-    expect(readDirectory('.\\test\\testPrueba')).toEqual(['file.js', 'file6.md', 'prueba1', 'prueba2']);
+    expect(readDirectory(path.resolve('.\\test\\testPrueba'))).toEqual(['file.js', 'file6.md', 'prueba1', 'prueba2']);
   });
   it('Deberia retornar el array de archivos MD', () => {
-    expect(getMDFiles(`${process.cwd()}\\test\\testPrueba\\file6.md`)).toEqual([
-      `${process.cwd()}\\test\\testPrueba\\file6.md`
+    expect(getMDFiles(path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`))).toEqual([
+      path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`)
     ]);
   });
   it('Deberia retornar el array de archivos MD de la carpeta', () => {
-    expect(getMDFiles(`${process.cwd()}\\test\\testPrueba`)).toEqual([
+    expect(getMDFiles(path.resolve(`${process.cwd()}\\test\\testPrueba`))).toEqual([
       `${process.cwd()}\\test\\testPrueba\\file6.md`, 
       `${process.cwd()}\\test\\testPrueba\\prueba1\\file2.md`,
       `${process.cwd()}\\test\\testPrueba\\prueba1\\prueba1.1\\file3.md`,

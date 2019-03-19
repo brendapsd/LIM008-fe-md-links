@@ -1,4 +1,5 @@
 import { totalLinksStats, uniqueLinksStats, brokenLinksStats } from '../src/controller/stats.js';
+const path = require('path');
 
 const arrObjLinksOK = [
   { href: 'https://es.wikipedia.org/wiki/Markdown',

@@ -1,5 +1,3 @@
-import { getMDLinks, getMDFiles } from './path.js';
-
 const fetch = require('node-fetch');
 
 export const linksValidate = (arrObjLinks) => {  
