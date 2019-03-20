@@ -5,43 +5,43 @@ const arrObjLinks = [
   { href: 'https://es.wikipediaXX.org/wiki/Markdown',
     text: 'Markdown',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+ path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://nodejs.org/',
     text: 'Node.js',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://semver.org/',
     text: 'Semver',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+ path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://nodejs.org/en/',
     text: 'Node.js',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+ path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://nodejs.org/api/fs.html',
     text: 'File System',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+ path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://daringfireball.net/projects/markdown/synx',
     text: 'Markdown',
     file:
- `${process.cwd()}\\test\\testPrueba\\file6.md` },
+ path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`) },
   { href: 'https://github.com/workshopper/learnyounode',
     text: 'learnyounode',
     file:
-  `${process.cwd()}\\test\\testPrueba\\prueba1\\file2.md` },
+  path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba1\\file2.md`) },
   { href: 'https://github.com/markdown-it/markdown-it',
     text: 'markdown-it',
     file:
-  `${process.cwd()}\\test\\testPrueba\\prueba1\\prueba1.1\\file3.md` },
+  path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba1\\prueba1.1\\file3.md`) },
   { href: 'https://nodejs.org/en/',
     text: 'Node.js',
     file:
-  `${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md` },
+  path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md`) },
   { href: 'https://nodejs.org/docs/latest-v0.10.x/api/modules.html',
     text: 'módulos (CommonJS)',
     file:
-  `${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md` }
+  path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md`) }
 ]; 
 
 describe('convertRelativeToAbsolute', () => {
@@ -74,13 +74,13 @@ describe('readDirectory, getMDFiles, getMDLinks', () => {
   });
   it('Deberia retornar el array de archivos MD de la carpeta', () => {
     expect(getMDFiles(path.resolve(`${process.cwd()}\\test\\testPrueba`))).toEqual([
-      `${process.cwd()}\\test\\testPrueba\\file6.md`, 
-      `${process.cwd()}\\test\\testPrueba\\prueba1\\file2.md`,
-      `${process.cwd()}\\test\\testPrueba\\prueba1\\prueba1.1\\file3.md`,
-      `${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md`
+      path.resolve(`${process.cwd()}\\test\\testPrueba\\file6.md`), 
+      path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba1\\file2.md`),
+      path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba1\\prueba1.1\\file3.md`),
+      path.resolve(`${process.cwd()}\\test\\testPrueba\\prueba2\\file4.md`)
     ]);
   });
   it('Deberia retornar el array de objetos con las propiedades href, text, file de los archivos MD', () => {
-    expect(getMDLinks(getMDFiles(`${process.cwd()}\\test\\testPrueba`))).toEqual(arrObjLinks);
+    expect(getMDLinks(getMDFiles(path.resolve(`${process.cwd()}\\test\\testPrueba`)))).toEqual(arrObjLinks);
   });
 });
