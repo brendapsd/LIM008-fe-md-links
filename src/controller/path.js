@@ -64,4 +64,4 @@ export const getMDLinks = (arrayMDFiles) => {
 // console.log(getMDLinks(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba'))); 
 // const inputTerminal = process.argv[2];
 // console.log(inputTerminal);
-// console.log(getMDFiles(process.argv[2])); 
+// console.log(getMDFiles('C:\\Users\\brenda\\Documents\\project markdown\\LIM008-fe-md-links\\test\\testPrueba')); 
