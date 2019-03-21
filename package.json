@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "md-links": "lib/cli.js"
+    "md-links": "lib/viewCli.js"
   },
   "repositary": {
     "type": "git",

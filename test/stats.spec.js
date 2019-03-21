@@ -1,29 +1,29 @@
 import { totalLinksStats, uniqueLinksStats, brokenLinksStats } from '../src/controller/stats.js';
-const path = require('path');
+import { convertRelativeToAbsolute } from '../src/controller/path.js';
 
 const arrObjLinksOK = [
   { href: 'https://es.wikipedia.org/wiki/Markdown',
     text: 'Markdown',
     file:
-       path.resolve('./test/testPrueba/file6.md'),
+       convertRelativeToAbsolute('./test/testPrueba/file6.md'),
     status: 200,
     message: 'OK' },
   { href: 'https://es.wikipedia.org/wiki/Markdown',
     text: 'Markdown',
     file:
-       path.resolve('./test/testPrueba/file6.md'),
+       convertRelativeToAbsolute('./test/testPrueba/file6.md'),
     status: 200,
     message: 'OK' },
   { href: 'https://nodejs.org/',
     text: 'Node.js',
     file:
-       path.resolve('./test/testPrueba/file6.md'),
+       convertRelativeToAbsolute('./test/testPrueba/file6.md'),
     status: 200,
     message: 'OK' }, 
   { href: 'https://daringfireball.net/projects/markdown/synx',
     text: 'Markdown',
     file:
-       path.resolve('./test/testPrueba/file6.md'),
+       convertRelativeToAbsolute('./test/testPrueba/file6.md'),
     status: 404,
     message: 'Fail' }
 ];
