@@ -10,6 +10,7 @@ import { totalLinksStats, uniqueLinksStats, brokenLinksStats } from './controlle
 const path = process.argv[2];
 const firstOption = process.argv[3];
 const secondOption = process.argv[4];
+// const opti = process.argv.slice(2);
 
 const validateOption = {
   validate: false
@@ -19,7 +20,6 @@ if (firstOption === '--validate' && secondOption === '--stats' || firstOption ==
   validateOption.validate = true;
   mdLinks(path, validateOption)
     .then(res => console.log(`Total:${totalLinksStats(res)}\nUnique:${uniqueLinksStats(res)}\nBroken:${brokenLinksStats(res)}`))
-    .catch(error => console.log(error));
 } else if (firstOption === '--validate') {
   validateOption.validate = true;
   mdLinks(path, validateOption)
@@ -33,8 +33,8 @@ if (firstOption === '--validate' && secondOption === '--stats' || firstOption ==
   mdLinks(path)
     .then(res => console.log(`Total:${totalLinksStats(res)}\nUnique:${uniqueLinksStats(res)}`))
     .catch(error => console.log(error));
-} else {
-  mdLinks(path)
+} else if (opti.length === 0) {
+  mdLinks(path, {validate: false})
     .then(res => res.forEach((objLinks) => { 
       console.log(`${objLinks.file}\n${objLinks.href}\n${objLinks.text}`);
     }))
