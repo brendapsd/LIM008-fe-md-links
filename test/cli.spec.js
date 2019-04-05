@@ -1,4 +1,4 @@
-import { showConsole } from '../src/cli.js';
+import { showConsole } from '../src/viewCli.js';
 import { convertRelativeToAbsolute } from '../src/controller/path.js';
 
 const input = convertRelativeToAbsolute('./test/testPrueba/file6.md');
